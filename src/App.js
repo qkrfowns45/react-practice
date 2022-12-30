@@ -25,6 +25,7 @@ function App() {
   const mystyle = {
     color: 'red',
   };
+  let list = [1, 2, 3, 4];
 
   return (
     <div>
@@ -33,6 +34,11 @@ function App() {
       </div>
       <h1 className="box-style">안녕1ssssdsa {b === 10 && '20입니다.'}</h1>
       <hr />
+      <div>
+        {list.map((n) => (
+          <h1>{n}</h1>
+        ))}
+      </div>
     </div>
   );
 }
