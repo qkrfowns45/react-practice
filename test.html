@@ -41,6 +41,20 @@
         //a5.forEach((n)=>{console.log(n);}); //리턴 못함
         const b5 = a5.map((n)=> n+10); //const b5 = [...a5]
         console.log(`b5의 값은 : ${b5}`);
+
+        //배열수정하기(map,spread이용)
+        const user = [
+            {id :1, name : "newbietop1", phone: "1111"},
+            {id :2, name : "newbietop2", phone: "2222"},
+            {id :3, name : "newbietop3", phone: "3333"}
+        ];
+
+        const updateUserDto = {
+            id:2,name:"홍길동"
+        }
+
+        const newUser = user.map( u => u.id === updateUserDto.id ? {...u,...updateUserDto} : u);
+        console.log(newUser);
     </script>
 </body>
 </html>
