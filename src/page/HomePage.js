@@ -6,7 +6,7 @@ import Home from '../components/home/Home';
 const HomePage = () => {
   //http 요청(jquery ajax,fetch,axios(다운)) 넘기려면 무조건 상태데이터!
   const [boards, setBoards] = useState([]);
-
+  const [user, setUser] = useState([]);
   //빈 배열이면 한번만 실행
   useEffect(() => {
     //다운로드 가정
@@ -18,12 +18,13 @@ const HomePage = () => {
 
     //빈데이터가 들어감!
     setBoards([...datas]);
+    setUser({ id: 1, username: 'newbie' });
   }, []);
 
   return (
     <div>
       <Header />
-      <Home boards={boards} setBoards={setBoards} />
+      <Home boards={boards} setBoards={setBoards} user={user} />
       <Footer />
     </div>
   );
